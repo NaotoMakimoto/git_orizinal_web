@@ -4,18 +4,175 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="./assets/css/reset.css">
     <link rel="stylesheet" href="./assets/css/style2.css">
 </head>
 <body>
     <header>
-
+        <!-- ロゴ -->
+        <div class="header-left">
+            <a href="">
+                <img src="./assets/img/etc/rogo_hanten.png" alt="">
+            </a>
+        </div>
+        <!-- ハンバーガー -->
+        <div class="openbtn"><span></span><span></span><span></span></div>
+        <nav id="g-nav">
+            <div class="picture">
+                <img src="./assets/img/main_view/keshiki9.jpg" alt="">
+            </div>
+            <div class="ham_content">
+                <div class="ham_logo">
+                    <img src="./assets/img/etc/rogo.png" alt="">
+                </div>
+                <div class="ul_box_left">
+                    <ul id="ul_left">              
+                        <li>
+                            <a href="">お部屋</a>
+                        </li>
+                        <li>
+                            <a href="">お食事</a>
+                            <ul>
+                                <li>
+                                    <a href="">オールデイダイニング「ザ・テラス」</a>
+                                </li>
+                                <li>
+                                    <a href="">テラスラウンジ</a>
+                                </li>
+                                <li>
+                                    <a href="">日本料理 富貴庵/寿司処</a>
+                                </li>
+                                <li>
+                                    <a href="">ガーデンラウンジ</a>
+                                </li>
+                                <li>
+                                    <a href="">鉄板焼「結久（むく）」</a>
+                                </li>
+                                <li>
+                                    <a href="">アッパーラウンジ</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="">ウエディング</a>
+                        </li>
+                        <li>
+                            <a href="">スパ　ヘボニオ・ボタニカ</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="ul_box_right">
+                    <ul id="ul_right">
+                        <li>
+                            <a href="">News</a>
+                        </li>
+                        <li>
+                            <a href="">Events & Topics</a>
+                        </li>
+                        <li>
+                            <a href="">よくあるご質問</a>
+                        </li>
+                        <li>
+                            <a href="">お問い合わせ</a>
+                        </li>
+                        <li>
+                            <a href="">アクセス</a>
+                        </li>
+                        <li>
+                            <a href="">シャトルバスのご案内</a>
+                        </li>
+                        <li>
+                            <a href="">施設概要</a>
+                        </li>
+                        <li>
+                            <a href="">周辺施設</a>
+                        </li>
+                    </ul>
+                </div>
+                <div id="ham_reserve">
+                    <a href="">  
+                        <div class="row">
+                          <div class=" moreLinkText">
+                            宿泊予約
+                            <div class="lineArrow"></div>
+                          </div>
+                      </div>
+                    </a>
+                </div>
+                <div class="ul_bottom">
+                    <p>
+                        日本平ホテル<br>
+                    </p>
+                    <p>
+                        〒424-0875 <br>
+                        静岡県静岡市清水区馬走1500-2<br>
+                    </p>
+                    <p>
+                        TEL:054-335-1131
+                    </p>
+                    <a href="https://page.line.me/802ocvwa?openQrModal=true">
+                        <i class="fa-brands fa-line"></i>
+                    </a>
+                    <a href="https://www.facebook.com/NippondairaHotel">
+                        <i class="fa-brands fa-facebook"></i>
+                    </a>
+                    <a href="https://www.instagram.com/nippondairahotel_official/">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+                   
+                </div>
+            </div>
+        </nav>
     </header>
 
     <main>
+        <!-- トップ画面 -->
         <section class="top_view">
             <img src="./assets/img/food/allday/allday.webp" alt="">
+            <p>お食事</p>
         </section>
-        <section class="allday"></section>
+        <!-- オールデイ -->
+        <section class="allday">
+            <div class="container_top">
+                <div class="container_top_left">
+                    <img src="./assets/img/food/allday/allday_rogo.png" alt="">
+                    <div class="name">オールデイダイニング「ザ・テラス」</div>
+                    <div class="explain">朝食にはモーニングブッフェ。<br>
+                        昼食はメインディッシュと50種類以上の料理をお選びいただけるランチブッフェ。<br>
+                        ディナータイムはシェフのこだわりが詰まったフレンチコースをお楽しみいただけます。
+                    </div>
+                    <div class="grand_menu">
+                        <a href="">Grand Menu →</a>
+                    </div>
+                </div>
+                <div class="container_top_right">
+                    <img src="./assets/img/food/allday/allday3.jpg" alt="">
+                </div>
+            </div>
+            <div class="container_bottom">
+                <div class="container_bottom_left">
+                  <img src="./assets/img/food/allday/allday_1.jpg" alt="">
+                  <img src="./assets/img/food/allday/allday_2.jpg" alt="">
+                  <img src="./assets/img/food/allday/allday_3.jpg" alt="">
+                </div>
+                <div class="container_bottom_right">
+                    <table class="time_table">
+                        <tr>
+                            <th>Breakfast</th><td>7:00~10:00 [L.O. 9:30]</td>
+                        </tr>
+                        <tr>
+                            <th>Lunch</th><td>11:30~/13:10~ [90分・2部制]</td>
+                        </tr>
+                        <tr>
+                            <th>Dinner</th><td>17:30~21:30 <br>[コースL.O. 20:30, アラカルトL.O. 21:00]</td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="reserve">
+                    <a href="">ご予約はこちら →</a>
+                </div>
+            </div>
+        </section>
         <section></section>
         <section></section>
         <section></section>
@@ -25,5 +182,8 @@
     <footer>
 
     </footer>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="./assets/script2.js"></script>
 </body>
 </html>

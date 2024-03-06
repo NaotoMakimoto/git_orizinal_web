@@ -218,8 +218,8 @@
 .openbtn{
   position:fixed;
   z-index: 9999;
-  top:20px;
-  right: 20px;
+  top:1rem;
+  right: 1rem;
   cursor: pointer;
   width: 80px;
   height:80px;
