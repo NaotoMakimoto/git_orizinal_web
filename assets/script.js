@@ -1,22 +1,38 @@
 // ----メインスライドショー----
-$(function(){
-  // 最初のスライドを表示し、.zoomクラスを追加する
-  $(".slideshow-zoom li:first").css({"position":"relative", "opacity": 1}).addClass("zoom");
+$(function() {
+    // 現在の時間を取得
+    var now = new Date();
+    var hours = now.getHours();
 
-  // 最初のスライド以外を隠す
-  $(".slideshow-zoom li:not(:first)").hide();
+    // 適切なスライドのインデックスを決定
+    var startIndex;
+    if (hours >= 0 && hours < 6) { // 0:00~6:00
+        startIndex = 3; // main4.jpg
+    } else if (hours >= 6 && hours < 12) { // 6:00~12:00
+        startIndex = 0; // main1.jpg
+    } else if (hours >= 12 && hours < 18) { // 12:00~18:00
+        startIndex = 1; // main2.jpg
+    } else { // 18:00~24:00
+        startIndex = 2; // main3.jpg
+    }
 
-  setInterval(function(){
-    var $active = $(".slideshow-zoom li.zoom");
-    var $next = $active.next("li").length?$active.next("li"):$(".slideshow-zoom li:first");
+    // 指定されたスライドから開始
+    $(".slideshow-zoom li").hide().removeClass("zoom"); // すべてのスライドを非表示にしてzoomクラスを削除
+    $(".slideshow-zoom li").eq(startIndex).css({"position": "relative", "opacity": 1}).addClass("zoom").show(); // 開始インデックスのスライドを表示
 
-    // 現在のスライドから.zoomクラスを削除し、フェードアウトして非表示にする
-    $active.removeClass("zoom").fadeOut(2000, function() {
-        // フェードアウト完了後、次のスライドに.zoomクラスを追加し、フェードインする
-        $next.addClass("zoom").fadeIn(2000);
-    });
-  },6000);
+    // スライドショーのロジック
+    setInterval(function() {
+        var $active = $(".slideshow-zoom li.zoom");
+        var $next = $active.next("li").length ? $active.next("li") : $(".slideshow-zoom li:first");
+
+        // 現在のスライドから.zoomクラスを削除し、フェードアウトして非表示にする
+        $active.removeClass("zoom").fadeOut(2000, function() {
+            // フェードアウト完了後、次のスライドに.zoomクラスを追加し、フェードインする
+            $next.addClass("zoom").fadeIn(2000);
+        });
+    }, 6000);
 });
+
 
 //-----ハンバーガー------
 $(".openbtn").click(function () {//ボタンがクリックされたら

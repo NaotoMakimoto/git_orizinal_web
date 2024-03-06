@@ -8,3 +8,4 @@ $("#g-nav a").click(function () {//ナビゲーションのリンクがクリッ
     $(".openbtn").removeClass('active');//ボタンの activeクラスを除去し
     $("#g-nav").removeClass('panelactive');//ナビゲーションのpanelactiveクラスも除去
 });
+
