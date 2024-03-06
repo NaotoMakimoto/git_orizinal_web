@@ -16,7 +16,7 @@
     position: fixed;
     left: 20px;
     top: 20px;
-    width: 20%;
+    width: 15%;
     z-index: 900;
 }
 
@@ -327,18 +327,35 @@
 /* ----オールデイ------ */
 .allday {
   width: 100vw;
-  height: 100vh;
+  height: 72vh;
   background: url(../img/etc/pattern02.png);
+}
+
+@media screen and (min-width: 768px) {
+  .allday {
+    height: 102vh;
+  }
 }
 
 .container_top {
   width: 100vw;
-  height: 50vh;
+  height: 42vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   overflow: hidden;
-  
+}
+
+@media screen and (min-width: 768px) {
+  .container_top {
+    height: 60vh;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .container_top {
+    flex-direction: row;
+  }
 }
 
 .container_top_left {
@@ -346,15 +363,42 @@
   flex-direction: column;
   align-items: center;
   width: 90vw;
+  margin-top: 1rem;
 }
 
-.container_top_left img {
+@media screen and (min-width: 1280px) {
+  .container_top_left {
+    width: 40vw;
+  }
+}
+
+.container_top_left img {    /* ロゴ */
   width: 40%;
+}
+
+@media screen and (min-width: 1280px) {
+  .container_top_left img {
+    width: 45%;
+  }
 }
 
 .name {
   font-size: 1.1rem;
   margin-top: 0.5rem;
+}
+
+@media screen and (min-width: 768px) {
+  .name {
+    font-size: 1.7rem;
+    margin-top: 1rem;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .name {
+    font-size: 1.8rem;
+    margin-top: 2rem;
+  }
 }
 
 .explain {
@@ -364,8 +408,40 @@
   margin-top: 1rem;
 }
 
+@media screen and (min-width: 768px) {
+  .explain {
+    width: 80%;
+    font-size: 1.15rem;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .explain {
+    font-size: 1.25rem;
+    margin-top: 2rem;
+  }
+}
+
 .grand_menu {
   margin: 0 1rem 0 auto;
+}
+
+@media screen and (min-width: 768px) {
+  .grand_menu {
+    font-size: 1.5rem;
+    margin: 0 2rem 0.1rem auto;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .grand_menu {
+    font-size: 2rem;
+  }
+}
+
+.grand_menu:hover {
+  color: black;
+  opacity: 0.5;
 }
 
 .grand_menu a {
@@ -379,6 +455,13 @@
   margin: 1rem auto;
 }
 
+@media screen and (min-width: 1280px) {
+  .container_top_right {
+    width: 60vw;
+    margin-right: 2vw;
+  }
+}
+
 .container_top_right img {
   width: 100%;
   height: 100%;
@@ -389,7 +472,22 @@
   flex-direction: column;
   align-items: center;
   width: 100vw;
-  height: 40vh;
+  height: 28vh;
+  margin-top: 1rem;
+}
+
+@media screen and (min-width: 768px) {
+  .container_bottom {
+    height: 40vh;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .container_bottom {
+    flex-direction: row;
+    margin-top: 0;
+    align-items:flex-start;
+  }
 }
 
 .container_bottom_left {
@@ -399,19 +497,48 @@
   width: 90vw;
 }
 
+@media screen and (min-width: 1280px) {
+  .container_bottom_left {
+    width: 60vw;
+    height: 30vh;
+    justify-content: right;
+  }
+}
+
 .container_bottom_left img {
-  width: 30%;
-  /* margin: 0 auto; */
+  width: 31%;
+  height: auto;
 }
 
 .container_bottom_right {
   width: 90vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
+@media screen and (min-width: 1280px) {
+  .container_bottom_right {
+    width: 40vw;
+  }
 }
 
 .time_table {
-  margin: 0 auto;
+  margin: 0 auto 2%;
   margin-top: 1rem;
+}
+
+@media screen and (min-width: 768px) {
+  .time_table th {
+    font-size: 1.2rem;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .time_table th {
+    font-size: 1.5rem;
+    padding-left: 2rem;
+  }
 }
 
 .time_table td {
@@ -420,8 +547,37 @@
   padding-left: 0.8rem;
 }
 
+@media screen and (min-width: 768px) {
+  .time_table td {
+    font-size: 1.1rem;
+    padding: 0.5rem;
+    padding-left: 1.5rem;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .time_table td {
+    font-size: 1.3rem;
+    padding: 1rem;
+  }
+}
+
 .reserve {
-  margin: 2% 10% 0 auto;
+  margin: 0 2rem 0 auto;
+  align-self: flex-end;
+  
+}
+
+@media screen and (min-width: 768px) {
+  .reserve {
+    font-size: 1.5rem;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .reserve {
+    font-size: 2rem;
+  }
 }
 
 .reserve a {
@@ -429,3 +585,137 @@
   text-decoration: none;
 }
 
+.reserve a:hover {
+  opacity: 0.5;
+}
+
+
+/* ---------カフェ----------- */
+.cafe {
+  width: 100vw;
+  height: 72vh;
+  background: url(../img/etc/pattern01.png);
+}
+
+@media screen and (min-width: 768px) {
+  .cafe {
+    height: 102vh;
+  }
+}
+
+.container_bottom_right2 {
+  width: 90vw;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+@media screen and (min-width: 1280px) {
+  .container_bottom_right2 {
+    width: 40vw;
+    flex-direction: column;
+  }
+}
+
+.cake {
+  width: 35%;
+}
+
+@media screen and (min-width: 1280px) {
+  .cake {
+    width: 80%;
+  }
+}
+
+.cake img {
+  width: 100%;
+}
+
+@media screen and (min-width: 1280px) {
+  .cake img {
+    width: 70%;
+    margin-left: 10%;
+    margin-bottom: 0.5rem;
+  }
+}
+
+.cake p {
+  font-size: 0.6rem;
+  line-height: 1.1;
+}
+
+@media screen and (min-width: 768px) {
+  .cake p {
+    font-size: 0.8rem;
+  }  
+}
+
+@media screen and (min-width: 1280px) {
+  .cake p {
+    font-size: 1rem;
+  }
+}
+
+.cafe > .container_bottom_right {
+  flex-direction: row;
+}
+
+/* ----富貴庵---- */
+.fukian {
+  width: 100vw;
+  height: 72vh;
+  background: url(../img/etc/pattern02.png);
+}
+
+@media screen and (min-width: 768px) {
+  .fukian {
+    height: 102vh;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  #fukian_table {
+    margin-top: 10%;
+    margin-bottom: 5%;
+  }
+}
+
+/* -----ガーデン---- */
+.garden {
+  width: 100vw;
+  height: 72vh;
+  background: url(../img/etc/pattern01.png);
+}
+
+@media screen and (min-width: 768px) {
+  .garden {
+    height: 102vh;
+  }
+}
+
+/* ----結久----- */
+.muku {
+  width: 100vw;
+  height: 72vh;
+  background: url(../img/etc/pattern02.png);
+}
+
+@media screen and (min-width: 768px) {
+  .muku {
+    height: 102vh;
+  }
+}
+
+/* ----アッパー----- */
+.upper {
+  width: 100vw;
+  height: 72vh;
+  background: url(../img/etc/pattern01.png);
+}
+
+@media screen and (min-width: 768px) {
+  .upper {
+    height: 102vh;
+  }
+}
