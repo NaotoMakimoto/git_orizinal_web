@@ -1,33 +1,32 @@
+//logoの表示
+$(window).on('load',function(){
+    $("#splash").delay(1500).fadeOut('slow');
+    $("#splash_logo").delay(1200).fadeOut('slow');
+});
+  
+
 // ----メインスライドショー----
 $(function() {
-    // 現在の時間を取得
     var now = new Date();
     var hours = now.getHours();
-
-    // 適切なスライドのインデックスを決定
     var startIndex;
-    if (hours >= 0 && hours < 6) { // 0:00~6:00
-        startIndex = 3; // main4.jpg
-    } else if (hours >= 6 && hours < 12) { // 6:00~12:00
-        startIndex = 0; // main1.jpg
-    } else if (hours >= 12 && hours < 18) { // 12:00~18:00
-        startIndex = 1; // main2.jpg
-    } else { // 18:00~24:00
-        startIndex = 2; // main3.jpg
+    if (hours >= 0 && hours < 6) {
+        startIndex = 3;
+    } else if (hours >= 6 && hours < 12) { 
+        startIndex = 0; 
+    } else if (hours >= 12 && hours < 18) { 
+        startIndex = 1; 
+    } else { 
+        startIndex = 2; 
     }
 
-    // 指定されたスライドから開始
-    $(".slideshow-zoom li").hide().removeClass("zoom"); // すべてのスライドを非表示にしてzoomクラスを削除
-    $(".slideshow-zoom li").eq(startIndex).css({"position": "relative", "opacity": 1}).addClass("zoom").show(); // 開始インデックスのスライドを表示
+    $(".slideshow-zoom li").hide().removeClass("zoom"); 
+    $(".slideshow-zoom li").eq(startIndex).css({"position": "relative", "opacity": 1}).addClass("zoom").show(); 
 
-    // スライドショーのロジック
     setInterval(function() {
         var $active = $(".slideshow-zoom li.zoom");
         var $next = $active.next("li").length ? $active.next("li") : $(".slideshow-zoom li:first");
-
-        // 現在のスライドから.zoomクラスを削除し、フェードアウトして非表示にする
         $active.removeClass("zoom").fadeOut(2000, function() {
-            // フェードアウト完了後、次のスライドに.zoomクラスを追加し、フェードインする
             $next.addClass("zoom").fadeIn(2000);
         });
     }, 6000);
@@ -35,20 +34,20 @@ $(function() {
 
 
 //-----ハンバーガー------
-$(".openbtn").click(function () {//ボタンがクリックされたら
-	$(this).toggleClass('active');//ボタン自身に activeクラスを付与し
-    $("#g-nav").toggleClass('panelactive');//ナビゲーションにpanelactiveクラスを付与
+$(".openbtn").click(function () {
+	$(this).toggleClass('active');
+    $("#g-nav").toggleClass('panelactive');
 });
 
-$("#g-nav a").click(function () {//ナビゲーションのリンクがクリックされたら
-    $(".openbtn").removeClass('active');//ボタンの activeクラスを除去し
-    $("#g-nav").removeClass('panelactive');//ナビゲーションのpanelactiveクラスも除去
+$("#g-nav a").click(function () {
+    $(".openbtn").removeClass('active');
+    $("#g-nav").removeClass('panelactive');
 });
 
 //風景美術館---
 function BlurTextAnimeControl() {
 	$('.blurTrigger').each(function(){
-		var elemPos = $(this).offset().top-50;//要素より、50px上の
+		var elemPos = $(this).offset().top-50;
 		var scroll = $(window).scrollTop();
 		var windowHeight = $(window).height();
 		if (scroll >= elemPos - windowHeight){
@@ -154,30 +153,4 @@ $(function() {
         }
    })
 })
-
-// イベントスライドショー
-$('.slider').slick({
-    autoplay: false,//自動的に動き出すか。初期値はfalse。
-    infinite: false,//スライドをループさせるかどうか。初期値はtrue。
-    slidesToShow: 3,//スライドを画面に3枚見せる
-    slidesToScroll: 3,//1回のスクロールで3枚の写真を移動して見せる
-    prevArrow: '<div class="slick-prev"></div>',//矢印部分PreviewのHTMLを変更
-    nextArrow: '<div class="slick-next"></div>',//矢印部分NextのHTMLを変更
-    responsive: [
-        {
-        breakpoint: 769,//モニターの横幅が769px以下の見せ方
-        settings: {
-            slidesToShow: 2,//スライドを画面に2枚見せる
-            slidesToScroll: 2,//1回のスクロールで2枚の写真を移動して見せる
-        }
-    },
-    {
-        breakpoint: 426,//モニターの横幅が426px以下の見せ方
-        settings: {
-            slidesToShow: 1,//スライドを画面に1枚見せる
-            slidesToScroll: 1,//1回のスクロールで1枚の写真を移動して見せる
-        }
-    }
-]
-});
 
